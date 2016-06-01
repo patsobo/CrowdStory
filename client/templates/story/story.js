@@ -11,10 +11,15 @@ Template.story.onCreated(function helloOnCreated() {
 
 Template.story.helpers({
   counter() {
-    return Template.instance().counter.get();
+    //return Template.instance().counter.get();
+    return Stories.find().count();
   },
   words() {
-  	return Template.instance().words.get();
+    // Pull the last element in the collection
+  	var story = Stories.find({}, { limit: 1, sort: {natural: -1}});
+    console.log(story.size());
+    if (story == -1 || story == null) return "Couldn't find...";
+    else return story["content"];
   }
 });
 
@@ -38,7 +43,7 @@ Template.story.events({
     instance.words.set(instance.words.get() + String(post.target.addition.value));
     
     // Save story to database
-    //Meteor.call("updateStory", instance.words.get());
+    Meteor.call("createStory", instance.words.get());
 
     // Clear the text area
     post.target.addition.value = "";
