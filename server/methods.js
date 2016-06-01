@@ -23,4 +23,15 @@ Meteor.methods({
 			//title: post.title,
 		//});
 	},
+
+	/**
+	 * Creates the new story for the week
+	 *
+	 * @param post The story to be created
+	 */
+	'createStory': function(story) {
+		//Stories.insert({
+			//title: post.title,
+		//});
+	},
 });

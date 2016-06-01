@@ -34,8 +34,11 @@ Template.story.events({
       post.target.addition.value = '\n\n' + post.target.addition.value;
     }
   	
-    // Update the story
+    // Update the story (TEMP, to be replaced with database)
     instance.words.set(instance.words.get() + String(post.target.addition.value));
+    
+    // Save story to database
+    //Meteor.call("updateStory", instance.words.get());
 
     // Clear the text area
     post.target.addition.value = "";
