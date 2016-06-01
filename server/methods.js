@@ -35,6 +35,8 @@ Meteor.methods({
 		Stories.insert({
 			content: story,
 			start_date: date,
+
+			// set one week later
 			end_date: new Date(date + 7*24*60*60*1000)
 		});
 	}

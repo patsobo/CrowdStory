@@ -1,15 +1,15 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
-import './story.html';
+import './story-current.html';
 
-Template.story.onCreated(function helloOnCreated() {
+Template.storyCurrent.onCreated(function helloOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);
   this.words = new ReactiveVar("");
 });
 
-Template.story.helpers({
+Template.storyCurrent.helpers({
   counter() {
     //return Template.instance().counter.get();
     return Stories.find().count();
@@ -23,7 +23,7 @@ Template.story.helpers({
   }
 });
 
-Template.story.events({
+Template.storyCurrent.events({
   'click button'(event, instance) {
     // increment the counter when button is clicked
     instance.counter.set(instance.counter.get() + 1);
