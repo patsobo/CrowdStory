@@ -1,0 +1,7 @@
+/* CSS declarations go here */
+p, pre {
+	font-family: Merriwether, serif;
+}
+p#novel {
+	white-space: pre;
+}
