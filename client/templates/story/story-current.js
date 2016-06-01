@@ -16,8 +16,8 @@ Template.storyCurrent.helpers({
   },
   words() {
     // Pull the last element in the collection
-  	var story = Stories.find({}, { limit: 1, sort: {natural: -1}});
-    console.log(story.size());
+  	var story = Stories.find({}, { sort: {natural: -1, limit: 1}});
+    //console.log(story.size());
     if (story == -1 || story == null) return "Couldn't find...";
     else return story["content"];
   }
