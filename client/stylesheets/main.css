@@ -2,6 +2,6 @@
 p, pre {
 	font-family: Merriwether, serif;
 }
-p #story {
-	white-space: pre;
+#story, .excerpt {
+	white-space: pre-line;
 }

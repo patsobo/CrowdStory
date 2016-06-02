@@ -4,8 +4,6 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './story-current.html';
 
 Template.storyCurrent.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
   this.words = new ReactiveVar("");
 });
 
@@ -16,18 +14,20 @@ Template.storyCurrent.helpers({
   },
   words() {
     // Pull the last element in the collection
-  	var story = Stories.find({}, { sort: {natural: -1, limit: 1}});
-    //console.log(story.size());
-    if (story == -1 || story == null) return "Couldn't find...";
+  	var story = Stories.findOne({}, { sort: {start_time: -1, limit: 1}});
+
+    if (story != null) console.log("STORY: " + story["content"]);
+
+    // I don't think this if statement actually works
+    if (story == null) return "Couldn't find...";
     else return story["content"];
   }
 });
 
 Template.storyCurrent.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-    //console.log("WORDS: " + instance.words.get());
+  'click .buttonDelete'(event, instance) {
+    // Delete EVERYTHING
+    Meteor.call("deleteStories");
   },
 
   'submit form': function(post, instance) {

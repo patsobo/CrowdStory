@@ -17,13 +17,11 @@ Meteor.methods({
 	//},
 
 	/**
-	 * Submits the story for the week to the archives.  Basically just gives it an end date
+	 * Deletes all stories.
 	 */
-	//'submitStory': function() {
-		//Stories.insert({
-			//title: post.title,
-		//});
-	//},
+	'deleteStories': function() {
+		Stories.remove({});
+	},
 
 	/**
 	 * Creates the new story for the week
