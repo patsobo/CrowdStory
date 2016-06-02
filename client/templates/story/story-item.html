@@ -1,9 +1,9 @@
 <template name="storyItem">
 		<div class="storyBit">
             <div class="date">
-            	<p>Began on: {{start_date}}
+            	<p>Began on: {{displayDate start_date}}
             	<br/>
-            	Ended on: {{end_date}}</p>
+            	Ended on: {{displayDate end_date}}</p>
             </div>
             <div class="excerpt">
                 {{content}}
