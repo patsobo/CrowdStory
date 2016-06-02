@@ -14,9 +14,8 @@ Template.storyCurrent.helpers({
   },
   words() {
     // Pull the last element in the collection
-  	var story = Stories.findOne({}, { sort: {start_time: -1, limit: 1}});
-
-    if (story != null) console.log("STORY: " + story["content"]);
+    console.log("COUNT" + Stories.find().count());
+  	var story = Stories.findOne({}, {sort: {start_date: -1}});
 
     // I don't think this if statement actually works
     if (story == null) return "Couldn't find...";

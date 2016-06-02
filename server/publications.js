@@ -1,3 +1,3 @@
-//Meteor.publish('stories', function() {
-//	return Stories.find({},  { sort: { created_at: 1 } });
-//});
+Meteor.publish('stories', function() {
+	return Stories.find({},  { sort: { start_time: -1 } });
+});
