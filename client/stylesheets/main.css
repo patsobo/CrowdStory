@@ -1,6 +1,7 @@
 /* CSS declarations go here */
-p, pre {
+div, p, pre, textarea {
 	font-family: Merriwether, serif;
+	font-size: 16px;
 }
 #story, .excerpt {
 	white-space: pre-line;
