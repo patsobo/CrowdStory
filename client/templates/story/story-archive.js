@@ -8,7 +8,7 @@ Template.storyArchive.helpers({
      * Returns a list of all posts available to the current user.
      */
 	'stories': function() {
-		return Stories.find({},  { sort: { start_time: -1 } });
+		return Stories.find({}, { sort: { start_date: -1 } });
 	},
 });
 

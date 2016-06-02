@@ -14,11 +14,9 @@ Template.storyCurrent.helpers({
   },
   words() {
     // Pull the last element in the collection
-    console.log("COUNT" + Stories.find().count());
-  	var story = Stories.findOne({}, {sort: {start_date: -1}});
+  	var story = CurrentStory.findOne({});//, {sort: {start_date: -1}});
 
-    // I don't think this if statement actually works
-    if (story == null) return "Couldn't find...";
+    if (story == null) return "No stories...";
     else return story["content"];
   }
 });
@@ -28,6 +26,10 @@ Template.storyCurrent.events({
     // Delete EVERYTHING
     Meteor.call("deleteStories");
   },
+  'click .buttonCreate'(event, instance) {
+    // Delete EVERYTHING
+    Meteor.call("createStory");
+  },  
 
   'submit form': function(post, instance) {
   	console.dir(post);
@@ -39,10 +41,10 @@ Template.storyCurrent.events({
     }
   	
     // Update the story (TEMP, to be replaced with database)
-    instance.words.set(instance.words.get() + String(post.target.addition.value));
+    //instance.words.set(instance.words.get() + String(post.target.addition.value));
     
     // Save story to database
-    Meteor.call("createStory", instance.words.get());
+    Meteor.call("updateStory", post.target.addition.value);
 
     // Clear the text area
     post.target.addition.value = "";
