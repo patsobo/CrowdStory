@@ -18,7 +18,19 @@ Template.storyCurrent.helpers({
 
     if (story == null) return "No stories...";
     else return story["content"];
-  }
+  },
+
+  /**
+   * Returns a list of all posts available to the current user.
+   */
+  'daysLeft': function() {
+    // get the end date of the current story
+    var end_date = CurrentStory.findOne({})["end_date"];
+    var current_date = new Date();
+
+    // convert the milliseconds into days, rounded up
+    return Math.ceil((end_date.getTime() - current_date.getTime()) / (1000*60*60*24));
+  },
 });
 
 Template.storyCurrent.events({

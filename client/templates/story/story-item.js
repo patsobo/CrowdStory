@@ -1,6 +1,6 @@
 Template.storyItem.helpers({
 	/**
-     * Returns a list of all posts available to the current user.
+     * Displays the date in a cleaner format.
      */
 	'displayDate': function(date) {
 		var monthNames = ["January", "February", "March", "April", "May", "June",
