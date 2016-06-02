@@ -4,7 +4,7 @@ Meteor.methods({
 	/**
 	 * Updates the current story with whatever the current user is doing
 	 *
-	 * @param post The current story to be updated, as text
+	 * @param post The additional text to add to the story
 	 */
 	'updateStory': function(addendum) {
 		var currentContent = CurrentStory.findOne({})["content"];
@@ -29,7 +29,6 @@ Meteor.methods({
 	/**
 	 * Creates the new story for the week, and saves the current one to the archives
 	 *
-	 * @param post The story to be created, as text
 	 */
 	'createStory': function() {
 		// Add the completed story to the archives
@@ -40,7 +39,7 @@ Meteor.methods({
 		CurrentStory.insert({
 			content: "",
 			start_date: date,
-			end_date: new Date(date.getTime() + 7*24*60*60*1000)	// one week later
+			end_date: new Date(date.getTime() + period)//7*24*60*60*1000)	// one week later
 		});
 	}
 });
