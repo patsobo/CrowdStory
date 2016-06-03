@@ -1,17 +1,24 @@
 <template name="storyCurrent">
-  
+  <h2>Current Story</h2>
   <div class="countdown">Only {{daysLeft}} days left!</div>
+
+  <br/>
+
   <div id="story">{{words}}</div>
 
   <br/>
   <button class="buttonDelete">Delete all stories</button>
   <button class="buttonCreate">Create a new story (TEMP)</button>
-  <p>There are currently {{counter}} stories.</p>
 
-  <h2>Add more!</h2>
-  <form class="storyAddition">
-	  <textarea name="addition" rows="10" cols="40"></textarea>
-	  <input id="buttonNewline" type="checkbox" value="Add on a new line">Add on a new line <br>
-	  <input class="buttonSubmit" type="submit" value="Submit It">
-  </form>
+  <div class="adder">
+    <h3>Add more!</h3>
+    <form class="storyAddition">
+  	  <textarea name="addition"></textarea>
+      <div class="checkbox">
+        <input id="buttonNewline" type="checkbox" name="check" value="Add on a new line">
+        <label for="buttonNewline">Add on a new line</label>
+      </div>
+  	  <input class="buttonSubmit" type="submit" value="Submit It">
+    </form>
+  </div>
 </template>

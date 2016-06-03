@@ -8,10 +8,6 @@ Template.storyCurrent.onCreated(function helloOnCreated() {
 });
 
 Template.storyCurrent.helpers({
-  counter() {
-    //return Template.instance().counter.get();
-    return Stories.find().count();
-  },
   words() {
     // Pull the last element in the collection
   	var story = CurrentStory.findOne({});//, {sort: {start_date: -1}});

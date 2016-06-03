@@ -37,7 +37,7 @@ Meteor.methods({
 
 		var date = new Date();
 		CurrentStory.insert({
-			content: "",
+			content: "Once upon a time...",
 			start_date: date,
 			end_date: new Date(date.getTime() + period)//7*24*60*60*1000)	// one week later
 		});
