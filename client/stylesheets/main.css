@@ -12,24 +12,51 @@ body {
 
 div, p, pre, textarea, h1, h2, h3, h4, h5 {
 	font-family: 'Helvetica', sans-serif;
-	font-weight: 300;
 }
 div, p, pre, textarea {
 	font-size: 1.1em;
 	color: #333;
-	font-weight: 500;
+	font-weight: inherit;
 }
 h1, h2, h3, h4, h5 {
 	color: #BF4F5B;
+	margin-bottom: 5px;
+	font-weight: 300;
 }
 
 
-#story, .excerpt {
+#story {
 	white-space: pre-line;
 	border-radius: 4px;
 	padding: 20px;
 	border: 1px solid;
+	word-wrap: break-word;
 }
+
+/* Archives */
+.storyBit {
+}
+.storyBit .date p {
+	margin: 0px;
+	color: #E7F8FE;
+	font-size: 16px;
+}
+.date {
+	padding: 20px;	
+	background-color: #2192BF;
+	transition: all 0.3s ease 0s;
+}
+.date:hover {
+	background-color: #07598C;
+}
+.excerpt {
+	display: none;
+	white-space: pre-line;
+	word-wrap: break-word;	
+	background-color: #fefdfb;
+	padding: 20px;
+}
+
 textarea {
 	background-color: #fefdfb;
 	border-radius: 2px;

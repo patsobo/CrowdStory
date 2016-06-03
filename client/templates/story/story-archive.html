@@ -2,7 +2,9 @@
 	<h2>Archives</h2>
 	<p>There have been {{counter}} stories.</p>
 
-	{{#each stories}}
-		{{> storyItem}}
-	{{/each}}
+	<div class="archives">
+		{{#each stories}}
+			{{> storyItem}}
+		{{/each}}
+	</div>
 </template>

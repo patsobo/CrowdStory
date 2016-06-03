@@ -12,4 +12,12 @@ Template.storyItem.helpers({
 });
 
 Template.storyItem.events({
+  'click .storyBit'(event, instance) {
+  	var $this = event.target;
+
+    // Fancy animation on the archive elements
+    $($this).closest(".storyBit").find(".excerpt").stop();
+    $($this).closest(".storyBit").find(".excerpt").slideToggle(250);    
+    
+  }	
 });
