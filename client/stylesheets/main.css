@@ -15,7 +15,7 @@ div, p, pre, textarea, h1, h2, h3, h4, h5 {
 }
 div, p, pre, textarea {
 	font-size: 1.1em;
-	color: #333;
+	color: #3A4145;
 	font-weight: inherit;
 }
 h1, h2, h3, h4, h5 {
@@ -27,9 +27,11 @@ h1, h2, h3, h4, h5 {
 
 #story {
 	white-space: pre-line;
+	font-size: 16px;
+	line-height: 1.5;
 	border-radius: 4px;
 	padding: 20px;
-	border: 1px solid;
+	border: none;
 	word-wrap: break-word;
 }
 
@@ -53,6 +55,7 @@ h1, h2, h3, h4, h5 {
 	word-wrap: break-word;	
 	background-color: #fefdfb;
 	padding: 20px;
+	font-size: 16px;
 }
 
 textarea {
@@ -90,6 +93,11 @@ button, input {
 }
 button:hover, input:hover {
 	background-color: #267341;
+}
+
+/* Footer */
+footer {
+	margin-top: 25px;
 }
 
 /* Checkbox */

@@ -9,14 +9,17 @@ Meteor.methods({
 	'updateStory': function(addendum) {
 		var currentContent = CurrentStory.findOne({})["content"];
 
-		// The empty curly braces mean update the first document (there's only one, anyway)
-		CurrentStory.update({},		
-		{
-			$set:
+		// Max out a story at 50000 words
+		if (currentContent.length + addendum.length <= 20000) {
+			// The empty curly braces mean update the first document (there's only one, anyway)
+			CurrentStory.update({},		
 			{
-				content: currentContent + addendum
-			}
-		});
+				$set:
+				{
+					content: currentContent + addendum
+				}
+			});
+		}
 	},
 
 	/**
