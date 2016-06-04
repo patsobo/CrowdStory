@@ -1,14 +1,16 @@
 <template name="storyCurrent">
-  <h2>Current Story</h2>
-  <div class="countdown">Only {{daysLeft}} days left!</div>
+  <h2>Current Story <span class="countdown">{{daysLeft}} days left</span></h2>
 
   <br/>
 
   <div id="story">{{words}}</div>
 
   <br/>
+  
+  <!--
   <button class="buttonDelete">Delete all stories</button>
   <button class="buttonCreate">Create a new story (TEMP)</button>
+  -->
 
   <div class="adder">
     <h3>Add more!</h3>
