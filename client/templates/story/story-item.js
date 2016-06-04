@@ -19,6 +19,11 @@ Template.storyItem.events({
     // Fancy animation on the archive elements
     excerpt.stop();
     excerpt.slideToggle(250);    
+
+    // Load content here instead of inside meteor generation loop to spare
+    // the user the pain of downloading a gigantic web page on initial load
+    var currentStory = this;
+    excerpt.html(currentStory["content"]);    
     
     excerpt.scrollTop(excerpt.height());
   }	
