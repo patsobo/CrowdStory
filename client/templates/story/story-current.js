@@ -5,7 +5,18 @@ import './story-current.html';
 
 Template.storyCurrent.onCreated(function helloOnCreated() {
   this.words = new ReactiveVar("");
+  setInterval ('cursorAnimation()', 800);
+
 });
+
+// Animates the cursor to show the current end of the story
+cursorAnimation = function() {
+    $('#cursor').animate({
+        opacity: 0
+    }, 'fast', 'swing').animate({
+        opacity: 1
+    }, 'fast', 'swing');
+}
 
 Template.storyCurrent.helpers({
   words() {

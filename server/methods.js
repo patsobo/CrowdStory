@@ -35,8 +35,10 @@ Meteor.methods({
 	 */
 	'createStory': function() {
 		// Add the completed story to the archives
-		if (CurrentStory.find().count() != 0) Stories.insert(CurrentStory.findOne({}));
-		CurrentStory.remove({});
+		if (CurrentStory.find().count() != 0) {
+			Stories.insert(CurrentStory.findOne({}));
+			CurrentStory.remove({});
+		}
 
 		var date = new Date();
 		CurrentStory.insert({
