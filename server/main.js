@@ -6,7 +6,7 @@ period = 7*24*60*60*1000;
 Meteor.startup(() => {
   // create the first story
   // actually, probably useless
-  //createStory();
+  createStory();
 
   // Initialize the story loop
   Meteor.setInterval(createStory, period);
